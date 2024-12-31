@@ -2,6 +2,23 @@
 
 StegPNG is a steganography tool that hides compressed text messages in PNG images. It uses the least significant bits (LSB) of the RGB color channels to embed the message.
 
+## Example
+
+Original image (wikismall2.png):
+
+![Original Wikipedia Logo](wikismall2.png)
+
+Image with hidden message (wikismall2-enc.png):
+
+![Wikipedia Logo with hidden message](wikismall2-enc.png)
+
+Can you spot the difference? The second image contains the complete Wikipedia article introduction about steganography (over 2200 characters) hidden in its pixels. The changes are so subtle they are virtually invisible to the human eye.
+
+You can verify this yourself by running:
+```bash
+python stegpng.py decode wikismall2-enc.png
+```
+
 ## Important Disclaimers
 
 - This is a proof of concept and should not be used for serious applications
