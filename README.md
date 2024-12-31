@@ -89,6 +89,18 @@ The tool works by:
 4. Using parity-based LSB encoding in the RGB channels
 5. Saving the modified image
 
+## Models and Compression
+
+The compression rate varies significantly depending on the model used:
+
+![Compression Performance vs Model Size](compression_tradeoff.png)
+
+- **rwkv_169M_q8** is the default model, chosen for its consistent results between CPU and GPU usage
+- **llama32-1B-q4** (Llama 3.2-1B with 4-bit quantization) offers significantly better compression but requires more storage
+- **llama32-3B-q8** (Llama 3.2-3B with 8-bit quantization) provides even better compression at the cost of a larger model size
+
+As shown in the graph, there is a trade-off between model size and compression performance (lower bits per byte is better). While larger models generally achieve better compression, they also require more storage space and computational resources.
+
 ## Credits
 
 - ts_sms is developed by Fabrice Bellard and available at https://bellard.org/ts_sms/
