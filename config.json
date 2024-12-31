@@ -1,0 +1,4 @@
+{
+    "cuda": true,
+    "model_path": "models/llama32-3B-q4.bin"
+}
